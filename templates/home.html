@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Exclusive Cars Automotive{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1>Welkom bij <span class="text-danger">Exclusive Cars</span></h1>
+                <p class="mb-4">
+                    Ontdek onze collectie van premium voertuigen. Van luxe sedans tot sportieve coupés, 
+                    wij bieden alleen het beste voor onze klanten.
+                </p>
+                <a href="{{ url_for('aanbod') }}" class="btn btn-danger btn-lg">
+                    <i class="bi bi-car-front"></i> Bekijk Ons Aanbod
+                </a>
+            </div>
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <i class="bi bi-car-front-fill" style="font-size: 15rem; color: var(--primary-red); opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Waarom Kiezen Voor Ons?</h2>
+            <div class="underline"></div>
+            <p>Wij bieden meer dan alleen auto's</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h4>Gecertificeerd & Gecontroleerd</h4>
+                    <p>Alle voertuigen worden grondig geïnspecteerd en komen met garantie.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-star-fill"></i>
+                    <h4>Premium Kwaliteit</h4>
+                    <p>Alleen de beste auto's in topconditie maken deel uit van ons aanbod.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-headset"></i>
+                    <h4>Uitstekende Service</h4>
+                    <p>Persoonlijke begeleiding en ondersteuning tijdens het hele proces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background-color: var(--medium-gray);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h3 class="text-light mb-2">Ontvang Exclusieve Aanbiedingen</h3>
+                <p class="text-muted mb-0">Schrijf u in voor onze nieuwsbrief en ontvang 5% korting op uw eerste aankoop!</p>
+            </div>
+            <div class="col-lg-4 mt-3 mt-lg-0">
+                <a href="{{ url_for('contact') }}" class="btn btn-danger btn-lg w-100">
+                    <i class="bi bi-envelope"></i> Schrijf U In
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

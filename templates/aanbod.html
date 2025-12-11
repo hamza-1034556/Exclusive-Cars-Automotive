@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Aanbod - Exclusive Cars Automotive{% endblock %}
+
+{% block content %}
+<section class="car-listing-section py-5">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ons <span class="text-danger">Aanbod</span></h2>
+            <div class="underline"></div>
+            <p>Ontdek onze zorgvuldig geselecteerde collectie premium voertuigen</p>
+        </div>
+
+        <div class="row g-4">
+            {% for car in cars %}
+            <div class="col-lg-4 col-md-6">
+                <div class="car-card">
+                    <div class="car-card-img">
+                        <i class="bi bi-car-front-fill"></i>
+                    </div>
+                    <div class="car-card-body">
+                        <h3 class="car-card-title">{{ car.name }}</h3>
+                        <div class="car-card-price">{{ car.price }}</div>
+                        <div class="car-card-details">
+                            <span>
+                                <i class="bi bi-calendar"></i>
+                                {{ car.year }}
+                            </span>
+                            <span>
+                                <i class="bi bi-speedometer"></i>
+                                {{ car.mileage }}
+                            </span>
+                            <span>
+                                <i class="bi bi-fuel-pump"></i>
+                                {{ car.fuel }}
+                            </span>
+                        </div>
+                        <p class="text-muted small mb-3">{{ car.description[:80] }}...</p>
+                        <a href="{{ url_for('car_detail', car_id=car.id) }}" class="btn btn-outline-danger w-100">
+                            <i class="bi bi-eye"></i> Bekijk Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
