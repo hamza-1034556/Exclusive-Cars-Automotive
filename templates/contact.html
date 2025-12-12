@@ -4,114 +4,118 @@
 
 {% block content %}
 <section class="contact-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Neem <span class="text-danger">Contact</span> Op</h2>
-            <div class="underline"></div>
-            <p>We helpen u graag verder</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Contact Information -->
-            <div class="col-lg-4">
-                <div class="contact-card h-100">
-                    <h4 class="text-light mb-4">Contact Informatie</h4>
-                    
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-3">
-                            <i class="bi bi-geo-alt-fill text-danger fs-4 me-3"></i>
-                            <div>
-                                <h6 class="text-light mb-1">Adres</h6>
-                                <p class="text-muted mb-0">Automotive Street 123<br>1012 AB Amsterdam<br>Nederland</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-3">
-                            <i class="bi bi-telephone-fill text-danger fs-4 me-3"></i>
-                            <div>
-                                <h6 class="text-light mb-1">Telefoon</h6>
-                                <p class="text-muted mb-0">+31 20 123 4567</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-3">
-                            <i class="bi bi-envelope-fill text-danger fs-4 me-3"></i>
-                            <div>
-                                <h6 class="text-light mb-1">E-mail</h6>
-                                <p class="text-muted mb-0">info@exclusivecars.nl</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="d-flex align-items-start">
-                            <i class="bi bi-clock-fill text-danger fs-4 me-3"></i>
-                            <div>
-                                <h6 class="text-light mb-1">Openingstijden</h6>
-                                <p class="text-muted mb-1">Ma - Vr: 09:00 - 18:00</p>
-                                <p class="text-muted mb-1">Zaterdag: 10:00 - 17:00</p>
-                                <p class="text-muted mb-0">Zondag: Gesloten</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Newsletter Subscription Form -->
-            <div class="col-lg-8">
-                <div class="contact-card">
-                    <h4 class="text-light mb-4">
-                        <i class="bi bi-gift text-danger"></i> Ontvang 5% Korting!
-                    </h4>
-                    <p class="text-muted mb-4">
-                        Schrijf u in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en 5% korting op uw eerste aankoop. 
-                        U kunt zich op elk moment weer afmelden.
-                    </p>
-
-                    <form method="POST" action="{{ url_for('contact') }}">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Naam</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Uw naam">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">E-mailadres *</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="uw.email@voorbeeld.nl" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Bericht (optioneel)</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Heeft u een vraag of opmerking? Laat het ons weten..."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" checked>
-                                    <label class="form-check-label text-muted" for="newsletter">
-                                        Ja, ik wil graag de nieuwsbrief ontvangen met exclusieve aanbiedingen
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-danger btn-lg w-100">
-                                    <i class="bi bi-send-fill"></i> Versturen & Kortingscode Ontvangen
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="mt-4 p-3" style="background-color: var(--light-gray); border-radius: 8px;">
-                        <p class="text-muted small mb-0">
-                            <i class="bi bi-shield-check text-danger"></i>
-                            <strong class="text-light">Privacy:</strong> Uw gegevens worden vertrouwelijk behandeld en nooit met derden gedeeld. 
-                            Lees ons <a href="#" class="text-danger">privacybeleid</a> voor meer informatie.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2>Neem <span class="text-accent">Contact</span> Op</h2>
+      <div class="underline"></div>
+      <p>We helpen u graag verder</p>
     </div>
+
+    <div class="row g-4 align-items-stretch">
+      <!-- Contact Information -->
+      <div class="col-lg-4">
+        <div class="contact-card contact-card-dark h-100">
+          <h4 class="mb-4">Contact Informatie</h4>
+
+          <div class="contact-info-item">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            <div>
+              <h6 class="mb-1">Adres</h6>
+              <p class="text-muted mb-0">Rotterdam, Nederland</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+            <div>
+              <h6 class="mb-1">Telefoon</h6>
+              <p class="text-muted mb-0">06 81 009 023</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+            <div>
+              <h6 class="mb-1">E-mail</h6>
+              <p class="text-muted mb-0">exclusivecarsautoverhuur@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="bi bi-clock-fill" aria-hidden="true"></i>
+            <div>
+              <h6 class="mb-1">Openingstijden</h6>
+              <p class="text-muted mb-1">Ma - Vr: 09:00 - 18:00</p>
+              <p class="text-muted mb-1">Zaterdag: 10:00 - 17:00</p>
+              <p class="text-muted mb-0">Zondag: Gesloten</p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <a href="mailto:exclusivecarsautoverhuur@gmail.com" class="btn btn-cta w-100">
+              <i class="bi bi-envelope"></i> Mail Ons Direct
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter / Contact Form -->
+      <div class="col-lg-8">
+        <div class="contact-card h-100">
+          <h4 class="mb-2">
+            <i class="bi bi-gift text-accent" aria-hidden="true"></i>
+            Ontvang 5% Korting
+          </h4>
+          <p class="text-muted mb-4">
+            Schrijf u in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en 5% korting op uw eerste reservering.
+            U kunt zich op elk moment weer afmelden.
+          </p>
+
+          <form method="POST" action="{{ url_for('contact') }}" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Naam</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Uw naam">
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label">E-mailadres <span class="text-accent">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="uw.email@voorbeeld.nl" required>
+              </div>
+
+              <div class="col-12">
+                <label for="message" class="form-label">Bericht (optioneel)</label>
+                <textarea class="form-control" id="message" name="message" rows="5"
+                  placeholder="Heeft u een vraag of opmerking? Laat het ons weten..."></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" checked>
+                  <label class="form-check-label text-muted" for="newsletter">
+                    Ja, ik wil graag de nieuwsbrief ontvangen met exclusieve aanbiedingen
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-cta btn-lg w-100">
+                  <i class="bi bi-send-fill"></i> Versturen & Kortingscode Ontvangen
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="contact-privacy">
+            <p class="text-muted small mb-0">
+              <i class="bi bi-shield-check text-accent" aria-hidden="true"></i>
+              <strong>Privacy:</strong> Uw gegevens worden vertrouwelijk behandeld en nooit met derden gedeeld.
+              Lees ons <a href="#" class="text-accent text-decoration-none">privacybeleid</a> voor meer informatie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}
