@@ -8,7 +8,7 @@
     <div class="section-header">
       <h2>Neem <span class="text-accent">Contact</span> Op</h2>
       <div class="underline"></div>
-      <p>We helpen u graag verder</p>
+      <p>We helpen je graag verder</p>
     </div>
 
     <div class="row g-4 align-items-stretch">
@@ -45,9 +45,9 @@
             <i class="bi bi-clock-fill" aria-hidden="true"></i>
             <div>
               <h6 class="mb-1">Openingstijden</h6>
-              <p class="text-muted mb-1">Ma - Vr: 09:00 - 18:00</p>
-              <p class="text-muted mb-1">Zaterdag: 10:00 - 17:00</p>
-              <p class="text-muted mb-0">Zondag: Gesloten</p>
+              <p class="text-muted mb-1">Ma - Do: 09:00 - 23:00</p>
+              <p class="text-muted mb-1">Vr - Zo: 00:00 - 00:00</p>
+<!--              <p class="text-muted mb-0">Zondag: Gesloten</p>-->
             </div>
           </div>
 
@@ -87,26 +87,26 @@
             Ontvang 5% Korting
           </h4>
           <p class="text-muted mb-4">
-            Schrijf u in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en 5% korting op uw eerste reservering.
-            U kunt zich op elk moment weer afmelden.
+            Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en 5% korting op je eerste reservering.
+            Je kunt je op elk moment weer afmelden.
           </p>
 
           <form method="POST" action="{{ url_for('contact') }}" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="name" class="form-label">Naam</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Uw naam">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Je naam">
               </div>
 
               <div class="col-md-6">
                 <label for="email" class="form-label">E-mailadres <span class="text-accent">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="uw.email@voorbeeld.nl" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="jouw.email@voorbeeld.nl" required>
               </div>
 
               <div class="col-12">
                 <label for="message" class="form-label">Bericht (optioneel)</label>
                 <textarea class="form-control" id="message" name="message" rows="5"
-                  placeholder="Heeft u een vraag of opmerking? Laat het ons weten..."></textarea>
+                  placeholder="Heb je een vraag of opmerking? Laat het ons weten..."></textarea>
               </div>
 
               <div class="col-12">
