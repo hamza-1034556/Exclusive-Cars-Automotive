@@ -2,6 +2,7 @@
 :root {
     --primary-red: #dc3545;
     --dark-red: #c82333;
+    --wc-red: #a00;
     --dark-gray: #2a2a2a;
     --medium-gray: #3a3a3a;
     --light-gray: #4a4a4a;
@@ -25,13 +26,29 @@ body {
 
 /* Ganti warna background navbar */
 .navbar {
-  background-color: #4e73df !important; /* biru lembut */
+    background: linear-gradient(to right, #a00, #1a1c20);
+  /*background-color: black !important; !* biru lembut *!*/
 }
 
 /* Ganti warna teks link navbar */
-.navbar .nav-link,
-.navbar-brand {
-  color: #ffffff !important;
+.navbar .nav-link {
+   color: #ffffff !important;
+}
+
+/*.navbar-brand {*/
+/*  color: #ffffff !important;*/
+/*}*/
+
+.navbar-brand img {
+    display: block;          /* geen baseline gezeur */
+    object-fit: contain;
+    background-color: white;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.navbar .container {
+    align-items: center;   /* centreert brand en nav items verticaal */
 }
 
 .navbar .nav-link:hover {
@@ -329,7 +346,8 @@ body {
 
 /* Footer */
 .footer {
-    background: linear-gradient(to right, #1a1c20, #2c3e50);
+    /*background: linear-gradient(to right, #1a1c20, #2c3e50);*/
+    background: linear-gradient(to right, #a00, #1a1c20);
     color: #ffffff;
     padding: 70px 0 30px;
     position: relative;
@@ -343,20 +361,22 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(to right, #3498db, #2ecc71);
+    /*background: linear-gradient(to right, #3498db, #2ecc71);*/
+    background: linear-gradient(to right, white, #383838)
 }
 
 .footer-logo {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #3498db, #2ecc71);
+    /*background: linear-gradient(45deg, #3498db, #2ecc71);*/
+    background: linear-gradient(to right, white, #1a1c20);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .footer-about {
-    color: #a4b5c6;
+    color: white;
     margin-bottom: 25px;
     line-height: 1.6;
 }
@@ -375,7 +395,7 @@ body {
     bottom: -10px;
     width: 30px;
     height: 2px;
-    background: #3498db;
+    background: white;
 }
 
 .footer-links {
@@ -389,7 +409,7 @@ body {
 }
 
 .footer-links a {
-    color: #a4b5c6;
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
