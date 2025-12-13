@@ -279,9 +279,13 @@ a{ color: inherit; }
 
 .car-card:hover{
   transform: translateY(-6px);
-  border-color: rgba(179,0,27,.25);
-  box-shadow: 0 18px 55px rgba(15,17,21,.14);
+  border-color: rgba(179,0,27,.45);
+  box-shadow:
+    0 18px 55px rgba(15,17,21,.14),
+    0 0 0 1px rgba(179,0,27,.10),
+    0 18px 45px rgba(179,0,27,.22);
 }
+
 
 .car-card-img{
   width: 100%;
@@ -313,8 +317,9 @@ a{ color: inherit; }
 .car-card-details{
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap:wrap;
   font-size: .95rem;
   color: var(--muted);
 }
@@ -322,6 +327,7 @@ a{ color: inherit; }
 .car-card-details span{
   display: inline-flex;
   align-items: center;
+  min-width: 48%;
   gap: 6px;
 }
 
@@ -376,6 +382,14 @@ a{ color: inherit; }
   display: flex;
   justify-content: space-between;
   gap: 12px;
+}
+
+.car-detail-description{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
 }
 
 .car-specs li:last-child{ border-bottom: none; }

@@ -4,61 +4,145 @@
 
 {% block content %}
 <section class="car-detail-section">
-    <div class="container">
-        <nav aria-label="breadcrumb" class="mb-4">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url_for('home') }}" class="text-danger text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url_for('aanbod') }}" class="text-danger text-decoration-none">Aanbod</a></li>
-                <li class="breadcrumb-item active text-light" aria-current="page">{{ car.name }}</li>
-            </ol>
-        </nav>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ url_for('home') }}" class="text-danger text-decoration-none">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{ url_for('aanbod') }}" class="text-danger text-decoration-none">Aanbod</a>
+        </li>
+        <li class="breadcrumb-item active text-muted" aria-current="page">{{ car.name }}</li>
+      </ol>
+    </nav>
 
-        <div class="row g-4">
-            <div class="col-lg-7">
-                <div class="car-detail-img">
-                    <i class="bi bi-car-front-fill"></i>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        {% set has_images = (car.images is defined and car.images and car.images|length > 0) %}
+
+        {% if has_images %}
+          <div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {% for img in car.images %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                  <img
+                    src="{{ url_for('static', filename=img) }}"
+                    class="d-block w-100"
+                    alt="{{ car.name }} foto {{ loop.index }}"
+                    style="height:400px;object-fit:cover;border-radius:16px;"
+                  >
                 </div>
+              {% endfor %}
             </div>
-            <div class="col-lg-5">
-                <div class="car-detail-info">
-                    <h1>{{ car.name }}</h1>
-                    <div class="price">{{ car.price }}</div>
-                    
-                    <ul class="car-specs">
-                        <li>
-                            <strong><i class="bi bi-calendar text-danger"></i> Bouwjaar</strong>
-                            <span>{{ car.year }}</span>
-                        </li>
-                        <li>
-                            <strong><i class="bi bi-speedometer text-danger"></i> Kilometerstand</strong>
-                            <span>{{ car.mileage }}</span>
-                        </li>
-                        <li>
-                            <strong><i class="bi bi-fuel-pump text-danger"></i> Brandstof</strong>
-                            <span>{{ car.fuel }}</span>
-                        </li>
-                        <li>
-                            <strong><i class="bi bi-gear text-danger"></i> Transmissie</strong>
-                            <span>{{ car.transmission }}</span>
-                        </li>
-                    </ul>
 
-                    <div class="mt-4">
-                        <h5 class="text-light mb-3">Beschrijving</h5>
-                        <p class="text-muted">{{ car.description }}</p>
-                    </div>
+            {% if car.images|length > 1 %}
+              <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Vorige</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Volgende</span>
+              </button>
+            {% endif %}
+          </div>
+        {% else %}
+          <div class="car-detail-img">
+            <i class="bi bi-car-front-fill"></i>
+          </div>
+        {% endif %}
 
-                    <div class="mt-4 d-grid gap-2">
-                        <a href="{{ url_for('contact') }}" class="btn btn-danger btn-lg">
-                            <i class="bi bi-envelope"></i> Neem Contact Op
-                        </a>
-                        <a href="{{ url_for('aanbod') }}" class="btn btn-outline-danger btn-lg">
-                            <i class="bi bi-arrow-left"></i> Terug naar Aanbod
-                        </a>
-                    </div>
-                </div>
-            </div>
+        {% if car.description %}
+          <div class="car-detail-description mt-4">
+            <h5 class="mb-2">Beschrijving</h5>
+            <p class="text-muted mb-0">{{ car.description }}</p>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="col-lg-5">
+        <div class="car-detail-info">
+          <h1>{{ car.name }}</h1>
+
+          <div class="price">€{{ car.price_per_day }} / dag</div>
+
+          <ul class="car-specs">
+            {% if car.deposit is defined %}
+              <li>
+                <strong><i class="bi bi-shield-lock text-danger"></i> Borg</strong>
+                <span>€{{ car.deposit }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.min_age is defined %}
+              <li>
+                <strong><i class="bi bi-person text-danger"></i> Minimum leeftijd</strong>
+                <span>{{ car.min_age }}+</span>
+              </li>
+            {% endif %}
+
+            {% if car.km_included is defined %}
+              <li>
+                <strong><i class="bi bi-speedometer text-danger"></i> Kilometerpakket</strong>
+                <span>{{ car.km_included }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.location is defined %}
+              <li>
+                <strong><i class="bi bi-geo-alt text-danger"></i> Locatie</strong>
+                <span>{{ car.location }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.year is defined %}
+              <li>
+                <strong><i class="bi bi-calendar text-danger"></i> Bouwjaar</strong>
+                <span>{{ car.year }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.fuel is defined %}
+              <li>
+                <strong><i class="bi bi-fuel-pump text-danger"></i> Brandstof</strong>
+                <span>{{ car.fuel }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.transmission is defined %}
+              <li>
+                <strong><i class="bi bi-gear text-danger"></i> Transmissie</strong>
+                <span>{{ car.transmission }}</span>
+              </li>
+            {% endif %}
+
+            {% if car.zero_to_hundred is defined and car.zero_to_hundred %}
+              <li>
+                <strong><i class="bi bi-stopwatch text-danger"></i> 0-100 km/u</strong>
+                <span>{{ car.zero_to_hundred }} s</span>
+              </li>
+            {% endif %}
+
+            {% if car.top_speed is defined and car.top_speed %}
+              <li>
+                <strong><i class="bi bi-speedometer2 text-danger"></i> Topsnelheid</strong>
+                <span>{{ car.top_speed }} km/u</span>
+              </li>
+            {% endif %}
+          </ul>
+
+          <div class="mt-4 d-grid gap-2">
+            <a href="{{ url_for('contact') }}" class="btn btn-danger btn-lg">
+              <i class="bi bi-envelope"></i> Reserveren / Contact
+            </a>
+            <a href="{{ url_for('aanbod') }}" class="btn btn-outline-danger btn-lg">
+              <i class="bi bi-arrow-left"></i> Terug naar Aanbod
+            </a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 {% endblock %}
