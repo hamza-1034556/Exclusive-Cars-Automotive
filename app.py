@@ -7,7 +7,7 @@ app.secret_key = "dev-secret-key-change-in-production"
 CARS = [
     {
         "id": 1,
-        "name": "VW Golf 8.5 R 2025 Special Black Edition",
+        "name": "VW Golf 8.5R 2025 Special Black Edition Akrapovič",
         "year": 2025,
 
         # verhuur velden
@@ -38,7 +38,7 @@ CARS = [
             "Met 333 pk accelereert de Golf 8.5R in slechts 4,6 seconden van 0 naar 100 km/u "
             "en bereikt hij met het R-Performance-pakket een topsnelheid tot 270 km/u. "
             "De Black Edition onderscheidt zich door zijn volledig donkere styling met zwarte 19 inch velgen, "
-            "Akrapovic uitlaatsysteem en agressieve look aangevuld met carbon accenten. "
+            "Akrapovič uitlaatsysteem en agressieve look aangevuld met carbon accenten. "
             "De Special modus, ontwikkeld voor de Nürburgring, optimaliseert het onderstel en aandrijving "
             "voor maximale prestaties op het circuit, terwijl het Harman Kardon premium audiosysteem zorgt "
             "voor een krachtige en zuivere geluidsbeleving. De perfecte performance hatch voor wie zich wil onderscheiden."
