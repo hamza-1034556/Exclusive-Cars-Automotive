@@ -32,6 +32,26 @@
   --text-muted: #b0b0b0;
 }
 
+/* Brand-consistent Bootstrap danger */
+.btn-danger{
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+.btn-danger:hover,
+.btn-danger:focus{
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: #fff !important;
+}
+
+/* Zorg dat "text-danger" ook jouw rood gebruikt */
+.text-danger{
+  color: var(--accent) !important;
+}
+
+
 /* Global */
 html{ scroll-behavior: smooth; }
 
