@@ -12,7 +12,6 @@
     </div>
 
     <div class="row g-4 align-items-stretch">
-      <!-- Contact Information -->
       <div class="col-lg-4">
         <div class="contact-card contact-card-dark h-100">
           <h4 class="mb-4">Contact Informatie</h4>
@@ -47,39 +46,38 @@
               <h6 class="mb-1">Openingstijden</h6>
               <p class="text-muted mb-1">Ma - Do: 09:00 - 23:00</p>
               <p class="text-muted mb-1">Vr - Zo: 00:00 - 00:00</p>
-<!--              <p class="text-muted mb-0">Zondag: Gesloten</p>-->
             </div>
           </div>
 
           <div class="mt-4">
-              <a href="mailto:exclusivecarsautoverhuur@gmail.com" class="btn btn-cta w-100">
-                <i class="bi bi-envelope"></i> Mail Ons Direct
-              </a>
+            <a href="mailto:exclusivecarsautoverhuur@gmail.com" class="btn btn-cta w-100">
+              <i class="bi bi-envelope"></i> Mail Ons Direct
+            </a>
 
-              <div class="contact-social mt-4 text-center">
-                <p class="contact-social-title mb-3">Of bereik ons via social media</p>
+            <div class="contact-social mt-4 text-center">
+              <p class="contact-social-title mb-3">Of bereik ons via social media</p>
 
-                <div class="contact-social-links justify-content-center">
-                  <a href="https://www.tiktok.com/@exclusivecarsaut0verhuur" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok">
-                    <i class="bi bi-tiktok"></i>
-                  </a>
-                  <a href="https://www.instagram.com/exclusivecarsautoverhuur/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-                  <a href="https://www.snapchat.com/@exclusivecars01" class="social-icon" target="_blank" rel="noopener" aria-label="Snapchat">
-                    <i class="bi bi-snapchat"></i>
-                  </a>
-                </div>
-
-                <a href="https://wa.me/31681009023" class="btn btn-outline-light w-100 mt-3">
-                  <i class="bi bi-whatsapp"></i> WhatsApp
+              <div class="contact-social-links justify-content-center">
+                <a href="https://www.tiktok.com/@exclusivecarsaut0verhuur" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+                <a href="https://www.instagram.com/exclusivecarsautoverhuur/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/@exclusivecars01" class="social-icon" target="_blank" rel="noopener" aria-label="Snapchat">
+                  <i class="bi bi-snapchat"></i>
                 </a>
               </div>
+
+              <a href="https://wa.me/31681009023" class="btn btn-outline-light w-100 mt-3">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
             </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Newsletter / Contact Form -->
       <div class="col-lg-8">
         <div class="contact-card h-100">
           <h4 class="mb-2">
@@ -88,7 +86,7 @@
           </h4>
           <p class="text-muted mb-4">
             Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en 5% korting op je eerste reservering.
-            Je kunt je op elk moment weer afmelden.
+            Welkomskorting is eenmalig per e-mailadres.
           </p>
 
           <form method="POST" action="{{ url_for('contact') }}" novalidate>
@@ -113,14 +111,14 @@
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" checked>
                   <label class="form-check-label text-muted" for="newsletter">
-                    Ja, ik wil graag de nieuwsbrief ontvangen met exclusieve aanbiedingen
+                    Ja, ik wil graag de nieuwsbrief ontvangen met exclusieve aanbiedingen (nodig voor de welkomskorting)
                   </label>
                 </div>
               </div>
 
               <div class="col-12">
                 <button type="submit" class="btn btn-cta btn-lg w-100">
-                  <i class="bi bi-send-fill"></i> Versturen & Kortingscode Ontvangen
+                  <i class="bi bi-send-fill"></i> Versturen
                 </button>
               </div>
             </div>
@@ -133,6 +131,7 @@
               Lees ons <a href="#" class="text-accent text-decoration-none">privacybeleid</a> voor meer informatie.
             </p>
           </div>
+
         </div>
       </div>
     </div>

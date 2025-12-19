@@ -27,6 +27,12 @@ wheels/
 instance/
 .webassets-cache
 
+# Secrets
+.env
+
+# Database (optioneel, zet aan als je de db niet wilt committen)
+# *.db
+
 # IDEs
 .vscode/
 .idea/
