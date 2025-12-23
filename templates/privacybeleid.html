@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Privacybeleid - Exclusive Cars{% endblock %}
+
+{% block content %}
+<section class="py-5" style="margin-top: 90px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
+        <div class="p-4 p-md-5 rounded-4 shadow-sm bg-dark text-white border" style="border-color: rgba(255,255,255,.08) !important;">
+          <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <div>
+              <h1 class="mb-2" style="font-weight: 800; letter-spacing: .5px;">Privacybeleid</h1>
+              <p class="text-white-50 mb-0">
+                Laatst bijgewerkt:
+                <span class="text-white">{{ datum }}</span>
+              </p>
+            </div>
+            <div class="text-end">
+              <a class="btn btn-outline-light btn-sm" href="{{ url_for('contact') }}">
+                <i class="bi bi-envelope"></i> Contact
+              </a>
+            </div>
+          </div>
+
+          <hr class="my-4" style="border-color: rgba(255,255,255,.12);">
+
+          <div class="text-white-50" style="line-height: 1.8;">
+            <p class="mb-4">
+              Exclusive Cars hecht veel waarde aan de bescherming van persoonsgegevens. In dit privacybeleid leggen wij uit
+              welke gegevens wij verwerken via onze website en waarom.
+            </p>
+
+            <h2 class="h5 text-white mt-4">1. Wie zijn wij</h2>
+            <p>
+              <strong class="text-white">Exclusive Cars</strong><br>
+              E-mail:
+              <a class="text-danger text-decoration-none" href="mailto:exclusivecarsautoverhuur@gmail.com">exclusivecarsautoverhuur@gmail.com</a><br>
+              Vestigingsplaats: Rotterdam, Nederland
+            </p>
+
+            <h2 class="h5 text-white mt-4">2. Welke persoonsgegevens verwerken wij</h2>
+            <p>Via onze website kunnen wij (afhankelijk van wat je invult) de volgende gegevens verwerken:</p>
+            <ul>
+              <li>Naam (optioneel)</li>
+              <li>E-mailadres (verplicht voor nieuwsbrief en kortingscode)</li>
+              <li>Berichtinhoud die je vrijwillig invult via het contactformulier</li>
+              <li>Voorkeur voor nieuwsbrief (toestemming)</li>
+              <li>Technische gegevens die nodig zijn voor het functioneren en beveiligen van de website (bijvoorbeeld server logs)</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">3. Doeleinden</h2>
+            <ul>
+              <li>Contactverzoeken beantwoorden</li>
+              <li>Kortingscodes versturen na aanmelding</li>
+              <li>Nieuwsbrieven en aanbiedingen sturen indien je toestemming hebt gegeven</li>
+              <li>Beveiliging en het voorkomen van misbruik/fraude</li>
+              <li>Basis administratie rondom communicatie</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">4. Rechtsgrond</h2>
+            <p>Wij verwerken persoonsgegevens op basis van één of meer van de volgende grondslagen:</p>
+            <ul>
+              <li>Toestemming (bijvoorbeeld nieuwsbrief)</li>
+              <li>Uitvoering van een overeenkomst of precontractuele fase (bijvoorbeeld reserveringsvragen)</li>
+              <li>Gerechtvaardigd belang (bijvoorbeeld klantenservice en beveiliging)</li>
+              <li>Wettelijke verplichting (indien van toepassing)</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">5. Bewaartermijnen</h2>
+            <p>
+              Wij bewaren gegevens niet langer dan noodzakelijk voor de doelen waarvoor ze zijn verzameld.
+              Nieuwsbriefgegevens bewaren wij totdat je je afmeldt, of totdat wij besluiten de nieuwsbrief te beëindigen.
+              Contactberichten bewaren wij zolang nodig is om je vraag te behandelen en eventuele vervolgcommunicatie te doen.
+            </p>
+
+            <h2 class="h5 text-white mt-4">6. Delen met derden</h2>
+            <p>
+              Wij verkopen jouw gegevens niet. Wij delen gegevens alleen als dit noodzakelijk is voor de werking van de website,
+              voor communicatie (bijvoorbeeld e-maildienst), of om te voldoen aan wettelijke verplichtingen.
+            </p>
+
+            <h2 class="h5 text-white mt-4">7. Beveiliging</h2>
+            <p>
+              Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen verlies,
+              misbruik en onbevoegde toegang. Denk aan toegangsbeheer, geheimhouding en het beperken van gegevens tot wat nodig is.
+            </p>
+
+            <h2 class="h5 text-white mt-4">8. Jouw rechten</h2>
+            <p>Je hebt het recht om:</p>
+            <ul>
+              <li>Inzage te vragen in jouw persoonsgegevens</li>
+              <li>Gegevens te laten corrigeren</li>
+              <li>Gegevens te laten verwijderen (waar mogelijk)</li>
+              <li>Toestemming in te trekken (bijvoorbeeld nieuwsbrief)</li>
+              <li>Bezwaar te maken tegen verwerking op basis van gerechtvaardigd belang</li>
+            </ul>
+            <p>
+              Je kunt een verzoek sturen naar:
+              <a class="text-danger text-decoration-none" href="mailto:exclusivecarsautoverhuur@gmail.com">exclusivecarsautoverhuur@gmail.com</a>
+            </p>
+
+            <h2 class="h5 text-white mt-4">9. Wijzigingen</h2>
+            <p class="mb-0">
+              Wij kunnen dit privacybeleid aanpassen. De meest actuele versie staat altijd op deze pagina.
+            </p>
+          </div>
+
+          <div class="mt-4 p-3 rounded-3" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-shield-check text-danger" aria-hidden="true"></i>
+              <div class="text-white-50">
+                Vragen over privacy of een verzoek indienen? Mail ons via
+                <a class="text-danger text-decoration-none" href="mailto:exclusivecarsautoverhuur@gmail.com">exclusivecarsautoverhuur@gmail.com</a>.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

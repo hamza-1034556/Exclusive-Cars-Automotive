@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Algemene Voorwaarden - Exclusive Cars{% endblock %}
+
+{% block content %}
+<section class="py-5" style="margin-top: 90px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
+        <div class="p-4 p-md-5 rounded-4 shadow-sm bg-dark text-white border" style="border-color: rgba(255,255,255,.08) !important;">
+          <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap">
+            <div>
+              <h1 class="mb-2" style="font-weight: 800; letter-spacing: .5px;">Algemene Voorwaarden</h1>
+              <p class="text-white-50 mb-0">
+                Laatst bijgewerkt:
+                <span class="text-white">{{ datum }}</span>
+              </p>
+            </div>
+            <div class="text-end">
+              <a class="btn btn-danger btn-sm" href="{{ url_for('contact') }}">
+                <i class="bi bi-send-fill"></i> Reserveren / Contact
+              </a>
+            </div>
+          </div>
+
+          <hr class="my-4" style="border-color: rgba(255,255,255,.12);">
+
+          <div class="text-white-50" style="line-height: 1.8;">
+            <p class="mb-4">
+              Deze algemene voorwaarden zijn van toepassing op het gebruik van de website en op aanvragen, reserveringsverzoeken
+              en communicatie met Exclusive Cars via deze website.
+            </p>
+
+            <h2 class="h5 text-white mt-4">1. Definities</h2>
+            <ul>
+              <li><strong class="text-white">Exclusive Cars</strong>: aanbieder van autoverhuur en gerelateerde diensten.</li>
+              <li><strong class="text-white">Klant</strong>: iedere bezoeker of persoon die een aanvraag doet of contact opneemt.</li>
+              <li><strong class="text-white">Website</strong>: de website van Exclusive Cars.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">2. Gebruik van de website</h2>
+            <ul>
+              <li>De informatie op de website is bedoeld als algemene informatie en kan worden gewijzigd.</li>
+              <li>Misbruik, ongeautoriseerde toegang of het verstoren van de website is niet toegestaan.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">3. Aanvragen en reserveringen</h2>
+            <ul>
+              <li>Een aanvraag via de website is een <strong class="text-white">reserveringsverzoek</strong> en geen definitieve boeking, tenzij schriftelijk bevestigd door Exclusive Cars.</li>
+              <li>Wij kunnen aanvullende gegevens of documenten vragen (bijvoorbeeld geldig rijbewijs en identificatie) voordat een reservering definitief wordt.</li>
+              <li>Beschikbaarheid en tarieven kunnen wijzigen tot het moment van bevestiging.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">4. Leeftijd, rijbewijs en gebruik</h2>
+            <ul>
+              <li>Voor het huren kunnen minimumleeftijd en aanvullende voorwaarden gelden, zoals vermeld bij het voertuig of in communicatie.</li>
+              <li>De bestuurder moet beschikken over een geldig rijbewijs en zich kunnen legitimeren.</li>
+              <li>Het voertuig mag alleen gebruikt worden conform wet- en regelgeving en de afspraken met Exclusive Cars.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">5. Borg, betaling en kosten</h2>
+            <ul>
+              <li>Voor sommige voertuigen geldt een borg. De hoogte kan per voertuig verschillen.</li>
+              <li>Betalingsvoorwaarden en eventuele bijkomende kosten (zoals extra kilometers, schade, reiniging) worden vooraf gecommuniceerd.</li>
+              <li>Bij schade of overtredingen kunnen kosten worden doorbelast aan de huurder conform de afspraken en wettelijke regels.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">6. Annuleren en wijzigen</h2>
+            <ul>
+              <li>Annulering of wijziging verloopt via contact. Eventuele kosten of voorwaarden worden vooraf bevestigd in de reserveringsbevestiging.</li>
+              <li>Bij no-show of te late annulering kunnen kosten in rekening worden gebracht, indien dit vooraf is overeengekomen.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">7. Aansprakelijkheid</h2>
+            <ul>
+              <li>Exclusive Cars is niet aansprakelijk voor indirecte schade, gevolgschade of gemiste opbrengst, tenzij dwingend recht anders bepaalt.</li>
+              <li>Wij streven naar correcte informatie op de website, maar kunnen fouten niet volledig uitsluiten.</li>
+              <li>Voorwaarden rondom verzekering en aansprakelijkheid worden in de reserveringsfase duidelijk afgestemd.</li>
+            </ul>
+
+            <h2 class="h5 text-white mt-4">8. Overmacht</h2>
+            <p>
+              In geval van overmacht (bijvoorbeeld storingen, onvoorziene omstandigheden, overheidsmaatregelen) kan Exclusive Cars
+              verplichtingen opschorten of de overeenkomst aanpassen of beëindigen voor zover redelijk.
+            </p>
+
+            <h2 class="h5 text-white mt-4">9. Intellectueel eigendom</h2>
+            <p>
+              Alle content op de website (teksten, foto’s, logo’s) is eigendom van Exclusive Cars of wordt gebruikt met toestemming.
+              Hergebruik zonder toestemming is niet toegestaan.
+            </p>
+
+            <h2 class="h5 text-white mt-4">10. Toepasselijk recht en geschillen</h2>
+            <p class="mb-0">
+              Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden bij voorkeur in overleg opgelost.
+              Indien nodig worden geschillen voorgelegd aan de bevoegde rechter in Nederland.
+            </p>
+          </div>
+
+          <div class="mt-4 p-3 rounded-3" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-info-circle text-danger" aria-hidden="true"></i>
+              <div class="text-white-50">
+                Deze pagina bevat algemene voorwaarden voor de website en communicatie. Definitieve huurvoorwaarden, borg en verzekering
+                worden bevestigd tijdens de reservering.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
