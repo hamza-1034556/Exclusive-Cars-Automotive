@@ -39,6 +39,10 @@ CARS = [
             "img/cars/golf-85-r-carbon/05.jpg",
             "img/cars/golf-85-r-carbon/06.jpg",
             "img/cars/golf-85-r-carbon/07.jpg",
+            "img/cars/golf-85-r-carbon/08.jpg",
+            "img/cars/golf-85-r-carbon/09.jpg",
+            "img/cars/golf-85-r-carbon/10.jpg",
+            "img/cars/golf-85-r-carbon/11.jpg",
         ],
         "description": (
             "Kracht, precisie en exclusiviteit komen samen in deze Black Edition.\n\n"
@@ -282,7 +286,7 @@ def contact():
         # Let op: images via _external werken pas goed voor ontvangers als je site een publieke URL heeft.
         hero_image_url = build_external_url("static", filename="img/cars/golf-85-r-carbon/01.png")
         image_1_url = build_external_url("static", filename="img/cars/golf-85-r-carbon/02.png")
-        image_2_url = build_external_url("static", filename="img/cars/golf-85-r-carbon/03.png")
+        image_2_url = build_external_url("static", filename="img/cars/golf-85-r-carbon/11.png")
         contact_url = build_external_url("contact")
 
         html_body = None

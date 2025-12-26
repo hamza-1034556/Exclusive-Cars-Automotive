@@ -1,3 +1,4 @@
+{# templates/car_detail.html #}
 {% extends "base.html" %}
 
 {% block title %}{{ car.name }} - Exclusive Cars Automotive{% endblock %}
@@ -22,26 +23,28 @@
         {% set has_images = (car.images is defined and car.images and car.images|length > 0) %}
 
         {% if has_images %}
-          <div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div id="carCarousel" class="carousel slide" data-bs-ride="false" data-bs-touch="true" data-bs-interval="false">
             <div class="carousel-inner">
               {% for img in car.images %}
                 <div class="carousel-item {% if loop.first %}active{% endif %}">
                   <img
                     src="{{ url_for('static', filename=img) }}"
-                    class="d-block w-100"
+                    class="d-block w-100 car-gallery-img"
                     alt="{{ car.name }} foto {{ loop.index }}"
-                    style="height:400px;object-fit:cover;border-radius:16px;"
+                    loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+                    data-index="{{ loop.index0 }}"
+                    style="height:400px;object-fit:cover;border-radius:16px;cursor:zoom-in;"
                   >
                 </div>
               {% endfor %}
             </div>
 
             {% if car.images|length > 1 %}
-              <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev" aria-label="Vorige foto">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Vorige</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next" aria-label="Volgende foto">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Volgende</span>
               </button>
@@ -62,7 +65,8 @@
       </div>
 
       <div class="col-lg-5">
-        <div class="car-detail-info">
+        {# BELANGRIJK: compact class toegevoegd #}
+        <div class="car-detail-info car-detail-info-compact">
           <h1>{{ car.name }}</h1>
 
           <div class="price">€{{ car.price_per_day }} / dag</div>
@@ -145,4 +149,204 @@
     </div>
   </div>
 </section>
+
+{% if has_images %}
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content" style="background:rgba(0,0,0,.88);color:#fff;border:0;">
+        <div class="modal-header" style="border-bottom:1px solid rgba(255,255,255,.10);">
+          <div class="d-flex flex-column">
+            <div id="imageModalLabel" class="fw-bold" style="font-size:1.05rem;">
+              {{ car.name }}
+              <span id="modalCounter" class="fw-normal" style="opacity:.85;"></span>
+            </div>
+            <small style="opacity:.75;">Klik op miniaturen of gebruik pijltjes, swipe werkt op mobiel.</small>
+          </div>
+
+          <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Sluiten"
+                  style="color:#fff;font-size:1.75rem;line-height:1;padding:0 6px;opacity:.9;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body" style="display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;">
+          <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:14px;overflow:hidden;">
+            <div id="modalCarousel" class="carousel slide w-100" data-bs-ride="false" data-bs-touch="true" data-bs-interval="false">
+              <div class="carousel-inner">
+                {% for img in car.images %}
+                  <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img
+                      src="{{ url_for('static', filename=img) }}"
+                      class="d-block w-100"
+                      alt="{{ car.name }} foto groot {{ loop.index }}"
+                      loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+                      style="max-height:calc(100vh - 220px);object-fit:contain;display:block;margin:0 auto;"
+                    >
+                  </div>
+                {% endfor %}
+              </div>
+
+              {% if car.images|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev" aria-label="Vorige foto">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Vorige</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next" aria-label="Volgende foto">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Volgende</span>
+                </button>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if car.images|length > 1 %}
+            <div
+              style="
+                flex:0 0 auto;
+                height:110px;
+                border-top:1px solid rgba(255,255,255,.12);
+                background:rgba(0,0,0,.35);
+                padding:10px 14px;
+                overflow:hidden;
+              "
+              aria-label="Miniaturen in groot scherm"
+            >
+              <div
+                id="modalThumbRow"
+                style="
+                  display:flex;
+                  gap:10px;
+                  overflow-x:auto;
+                  overflow-y:hidden;
+                  white-space:nowrap;
+                  height:100%;
+                  align-items:center;
+                  scrollbar-width:thin;
+                "
+              >
+                {% for img in car.images %}
+                  <button
+                    type="button"
+                    class="modal-thumb-btn {% if loop.first %}is-active{% endif %}"
+                    data-bs-target="#modalCarousel"
+                    data-bs-slide-to="{{ loop.index0 }}"
+                    aria-label="Ga naar foto {{ loop.index }} (groot scherm)"
+                    aria-current="{% if loop.first %}true{% else %}false{% endif %}"
+                    style="border:2px solid transparent;border-radius:10px;padding:0;background:transparent;flex:0 0 auto;cursor:pointer;outline:none;"
+                  >
+                    <img
+                      src="{{ url_for('static', filename=img) }}"
+                      alt="{{ car.name }} miniatuur groot {{ loop.index }}"
+                      loading="lazy"
+                      style="width:92px;height:62px;object-fit:cover;border-radius:8px;display:block;"
+                    >
+                  </button>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function () {
+    const imageModalEl = document.getElementById("imageModal");
+    if (!imageModalEl) return;
+
+    const modalCarouselEl = document.getElementById("modalCarousel");
+    const modalCounterEl = document.getElementById("modalCounter");
+    const thumbButtons = Array.from(document.querySelectorAll(".modal-thumb-btn"));
+    const galleryImgs = Array.from(document.querySelectorAll(".car-gallery-img"));
+
+    const total = thumbButtons.length || galleryImgs.length || 0;
+
+    let modalCarousel;
+    if (modalCarouselEl && window.bootstrap) {
+      modalCarousel = bootstrap.Carousel.getOrCreateInstance(modalCarouselEl, {
+        interval: false,
+        ride: false,
+        touch: true,
+        wrap: true
+      });
+    }
+
+    function setActiveThumb(index) {
+      thumbButtons.forEach((btn, i) => {
+        const active = i === index;
+        btn.classList.toggle("is-active", active);
+        btn.style.borderColor = active ? "var(--accent)" : "transparent";
+        btn.style.boxShadow = active ? "0 0 0 3px rgba(179,0,27,.25)" : "none";
+        btn.setAttribute("aria-current", active ? "true" : "false");
+      });
+    }
+
+    function updateCounter(index) {
+      if (!modalCounterEl || !total) return;
+      modalCounterEl.textContent = " (" + (index + 1) + "/" + total + ")";
+    }
+
+    function scrollThumbIntoView(index) {
+      const btn = thumbButtons[index];
+      if (!btn) return;
+      btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+
+    function openModalAt(index) {
+      const clamped = Math.max(0, Math.min(index, total - 1));
+      const modal = bootstrap.Modal.getOrCreateInstance(imageModalEl, { backdrop: true, keyboard: true, focus: true });
+
+      modal.show();
+      if (modalCarousel) modalCarousel.to(clamped);
+
+      setActiveThumb(clamped);
+      updateCounter(clamped);
+      scrollThumbIntoView(clamped);
+    }
+
+    galleryImgs.forEach((img) => {
+      img.addEventListener("click", () => {
+        const idx = parseInt(img.getAttribute("data-index") || "0", 10);
+        openModalAt(isNaN(idx) ? 0 : idx);
+      });
+    });
+
+    thumbButtons.forEach((btn, idx) => {
+      btn.addEventListener("click", () => {
+        setActiveThumb(idx);
+        updateCounter(idx);
+        scrollThumbIntoView(idx);
+      });
+    });
+
+    if (modalCarouselEl) {
+      modalCarouselEl.addEventListener("slid.bs.carousel", (ev) => {
+        const idx = typeof ev.to === "number" ? ev.to : 0;
+        setActiveThumb(idx);
+        updateCounter(idx);
+        scrollThumbIntoView(idx);
+      });
+    }
+
+    imageModalEl.addEventListener("shown.bs.modal", () => {
+      const activeIndex = thumbButtons.findIndex(b => b.classList.contains("is-active"));
+      const idx = activeIndex >= 0 ? activeIndex : 0;
+      setActiveThumb(idx);
+      updateCounter(idx);
+      scrollThumbIntoView(idx);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      const isOpen = imageModalEl.classList.contains("show");
+      if (!isOpen || !modalCarousel) return;
+
+      if (e.key === "ArrowLeft") modalCarousel.prev();
+      if (e.key === "ArrowRight") modalCarousel.next();
+    });
+  })();
+</script>
 {% endblock %}

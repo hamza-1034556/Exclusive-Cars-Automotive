@@ -1,3 +1,4 @@
+/* static/css/style.css */
 /* Exclusive Cars, clean light theme with dark accents */
 :root{
   /* Brand */
@@ -50,7 +51,6 @@
 .text-danger{
   color: var(--accent) !important;
 }
-
 
 /* Global */
 html{ scroll-behavior: smooth; }
@@ -232,7 +232,6 @@ a{ color: inherit; }
   margin: 0 auto 8px;
   color: var(--accent);
   font-size: 2.4rem;
-  /*margin-bottom: 18px;*/
 }
 
 .feature-card h4{
@@ -305,7 +304,6 @@ a{ color: inherit; }
     0 0 0 1px rgba(179,0,27,.10),
     0 18px 45px rgba(179,0,27,.22);
 }
-
 
 .car-card-img{
   width: 100%;
@@ -457,23 +455,6 @@ a{ color: inherit; }
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
-
-/* Contact */
-/*.contact-section{ padding: 40px 0; }*/
-
-/*.contact-section h1{*/
-/*  color: var(--text);*/
-/*  margin-bottom: 30px;*/
-/*  font-weight: 900;*/
-/*}*/
-
-/*.contact-card{*/
-/*  background: var(--surface);*/
-/*  border: 1px solid var(--border);*/
-/*  border-radius: 16px;*/
-/*  padding: 30px;*/
-/*  box-shadow: var(--shadow-sm);*/
-/*}*/
 
 .form-label{
   color: var(--text);
@@ -708,9 +689,10 @@ a{ color: inherit; }
 
 /* Niet meer "anywhere", zodat .com niet in stukken breekt */
 .footer .footer-links li{
-  overflow-wrap: break-word;  /* breekt alleen als het echt moet */
-  word-break: normal;         /* geen random letter-breuken */
+  overflow-wrap: break-word;
+  word-break: normal;
 }
+
 /* Contact page */
 .contact-section{
   padding: 90px 0;
@@ -807,4 +789,122 @@ a{ color: inherit; }
   border-color: rgba(255,255,255,.28);
   background: rgba(255,255,255,.08);
   color: #fff;
+}
+
+/* Car detail lightbox */
+.car-gallery-img{
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+
+.gallery-modal{
+  background: rgba(0,0,0,.92);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.gallery-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  opacity: .9;
+}
+
+.gallery-modal-img{
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  cursor: zoom-out;
+}
+
+.car-thumb{
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: .75;
+  border: 2px solid transparent;
+  transition: all .2s ease;
+}
+
+.car-thumb:hover{
+  opacity: 1;
+}
+
+.car-thumb.active{
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(179,0,27,.35);
+}
+
+/* Compactere specs card zodat alles in beeld blijft */
+.car-detail-info.car-detail-info-compact{
+  padding: 18px;
+}
+
+.car-detail-info.car-detail-info-compact h1{
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.car-detail-info.car-detail-info-compact .price{
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.car-detail-info.car-detail-info-compact .car-specs{
+  margin-top: 10px;
+}
+
+.car-detail-info.car-detail-info-compact .car-specs li{
+  padding: 8px 0;
+  gap: 10px;
+}
+
+.car-detail-info.car-detail-info-compact .car-specs li strong{
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.car-detail-info.car-detail-info-compact .car-specs li span{
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.car-detail-info.car-detail-info-compact .car-specs i{
+  font-size: 0.95rem;
+}
+
+/* EXTRA: specs card minder breed op desktop en titel responsief houden */
+@media (min-width: 992px){
+  .car-detail-info{
+    max-width: 520px;
+    margin-left: auto;
+  }
+}
+
+.car-detail-info h1{
+  font-size: clamp(1.55rem, 1.2rem + 1vw, 2.05rem);
+  line-height: 1.12;
+}
+
+.car-detail-info.car-detail-info-compact h1{
+  font-size: clamp(1.45rem, 1.05rem + 0.9vw, 1.85rem);
+  font-weight: 800;
+}
+
+/* Nog iets compacter (optioneel), zodat minder naar beneden gedrukt wordt */
+.car-detail-info.car-detail-info-compact .car-specs li{
+  padding: 7px 0;
+}
+.car-detail-info.car-detail-info-compact .car-specs li strong,
+.car-detail-info.car-detail-info-compact .car-specs li span{
+  font-size: 0.95rem;
 }

@@ -13,6 +13,8 @@ Exclusive Cars Automotive is een professionele website voor een autohandel, gebo
 - **Auto Detail**: Gedetailleerde informatie per voertuig
 - **FAQ**: Veelgestelde vragen met accordion functionaliteit
 - **Contact**: Contactformulier met nieuwsbrief inschrijving voor 5% korting
+- **Algemene Voorwaarden**: Juridische informatiepagina
+- **Privacybeleid**: Informatie over gegevensbescherming
 
 ## Features
 
@@ -24,7 +26,6 @@ Exclusive Cars Automotive is een professionele website voor een autohandel, gebo
 
 🚗 **Functionaliteit**
 - E-mail inschrijving voor 5% kortingscode
-- 6 voorbeeld voertuigen (BMW, Mercedes, Audi, VW, Tesla, Porsche)
 - Interactieve FAQ met Bootstrap accordion
 - Flash messages voor gebruikersfeedback
 - Jinja2 templating voor herbruikbare componenten
@@ -66,11 +67,16 @@ http://localhost:5000
 
 ```
 Exclusive-Cars-Automotive/
+├── .gitignore              # Git ignore bestand
 ├── app.py                  # Flask applicatie
 ├── requirements.txt        # Python dependencies
 ├── static/
 │   └── css/
 │       └── style.css      # Custom CSS styling
+│   └── img/
+│       └── cars           # Map met auto afbeeldingen
+│           └── audi-rs3-2025
+│           └── golf-85-r-carbon
 ├── templates/
 │   ├── base.html          # Base template met navbar en footer
 │   ├── home.html          # Homepage
@@ -78,6 +84,8 @@ Exclusive-Cars-Automotive/
 │   ├── car_detail.html    # Auto detail pagina
 │   ├── faq.html           # FAQ pagina
 │   └── contact.html       # Contact pagina
+│   └── emails             # E-mail templates
+│       └── discount_code.html       # E-mail voor kortingscode
 └── README.md
 ```
 
@@ -98,19 +106,21 @@ Exclusive-Cars-Automotive/
 
 ## Toekomstige Uitbreidingen
 
-- Database integratie voor auto's en klanten
-- Daadwerkelijke e-mail verzending voor kortingscodes
+- Database integratie voor auto's
 - Admin panel voor het beheren van voertuigen
 - Zoek- en filterfunctionaliteit
 - Afbeeldingen uploaden voor voertuigen
-- Contact formulier met e-mail notificaties
+- Upload voor andere verhuurders
+- Beoordelingssysteem voor voertuigen
+- Meertalige ondersteuning
+- Integratie met sociale media
 
 ## Licentie
 
-© 2024 Exclusive Cars Automotive. Alle rechten voorbehouden.
+© 2025 Exclusive Cars Automotive. Alle rechten voorbehouden.
 
 ## Contact
 
 Voor vragen of opmerkingen, neem contact op via:
-- E-mail: info@exclusivecars.nl
-- Telefoon: +31 20 123 4567
+- E-mail: exclusivecarsautoverhuur@gmail.com
+- Telefoon: +31 6 81 00 90 23
