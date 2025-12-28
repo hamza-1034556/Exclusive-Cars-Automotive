@@ -2,60 +2,70 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Exclusive Cars kortingscode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exclusive Cars – Welkomskorting</title>
 </head>
 
-<body style="margin:0;padding:0;background-color:#0b0b0b;">
-  <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#0b0b0b">
+<body style="margin:0;padding:0;background-color:#f2f2f2;">
+  <!-- Outer background -->
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#f2f2f2;">
     <tr>
-      <td align="center" style="padding:24px 12px;">
+      <td align="center" style="padding:30px 10px;">
 
-        <!-- Container -->
-        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#111111;border-radius:18px;overflow:hidden;">
+        <!-- Email container -->
+        <table width="600" cellpadding="0" cellspacing="0" role="presentation"
+               style="background-color:#0b0b0b;border-radius:18px;overflow:hidden;max-width:600px;">
 
           <!-- Header -->
           <tr>
-            <td style="padding:18px 20px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;font-size:18px;font-weight:bold;">
+            <td style="padding:20px 24px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;font-size:18px;font-weight:700;">
               EXCLUSIVE CARS
+              <span style="float:right;color:#999;font-size:12px;font-weight:400;">
+                {{ created_at }}
+              </span>
             </td>
           </tr>
 
           <!-- Hero image -->
           <tr>
-            <td>
-              <img src="{{ hero_image_url }}" width="600" alt="Exclusive Cars"
-                   style="width:100%;max-width:600px;display:block;border:0;">
+            <td align="center">
+              <img
+                src="https://exclusivecarsautoverhuur.nl/static/img/golf8r2025voorbeeld.png"
+                alt="Exclusive Cars"
+                width="600"
+                style="display:block;width:100%;max-width:600px;height:auto;"
+              >
             </td>
           </tr>
 
           <!-- Content -->
           <tr>
-            <td style="padding:24px 20px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
+            <td style="padding:28px 24px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
 
-              <h1 style="margin:0 0 12px 0;font-size:26px;">
-                Jouw 5% kortingscode
+              <h1 style="margin:0 0 10px 0;font-size:26px;line-height:1.3;">
+                Welkomskorting 5%
               </h1>
 
-              <p style="margin:0 0 20px 0;font-size:15px;line-height:1.6;color:#cccccc;">
-                Hi {{ name }},<br>
-                Bedankt voor je aanmelding bij Exclusive Cars.
-                Gebruik onderstaande code bij je reservering.
+              <p style="margin:0 0 20px 0;color:#cfcfcf;font-size:14px;line-height:1.6;">
+                Hi {{ name }},<br><br>
+                Bedankt voor je aanmelding bij <strong>Exclusive Cars</strong>.
+                Als welkom ontvang je hieronder jouw persoonlijke kortingscode.
               </p>
 
-              <!-- Code box -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
+              <!-- Code block -->
+              <table width="100%" cellpadding="0" cellspacing="0" role="presentation"
+                     style="background-color:#121212;border-radius:14px;border:1px solid #2a2a2a;margin-bottom:20px;">
                 <tr>
-                  <td align="center" bgcolor="#0b0b0b"
-                      style="padding:18px;border-radius:14px;border:1px solid #2a2a2a;">
-                    <div style="font-size:12px;color:#aaaaaa;letter-spacing:1px;margin-bottom:6px;">
+                  <td align="center" style="padding:20px;">
+                    <div style="color:#999;font-size:12px;letter-spacing:1px;margin-bottom:6px;">
                       JOUW KORTINGSCODE
                     </div>
-                    <div style="font-size:26px;font-weight:bold;background:#e10600;color:#ffffff;
-                                display:inline-block;padding:8px 16px;border-radius:10px;">
+                    <div style="display:inline-block;background:#e10600;color:#ffffff;
+                                font-size:26px;font-weight:800;letter-spacing:1px;
+                                padding:10px 18px;border-radius:10px;">
                       {{ discount_code }}
                     </div>
-                    <div style="margin-top:10px;font-size:12px;color:#aaaaaa;">
+                    <div style="color:#999;font-size:12px;margin-top:10px;">
                       Eenmalig geldig per e-mailadres
                     </div>
                   </td>
@@ -63,34 +73,42 @@
               </table>
 
               <!-- CTA -->
-              <table cellpadding="0" cellspacing="0" align="center">
+              <table cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                  <td bgcolor="#e10600" style="border-radius:12px;">
+                  <td align="center" style="background:#e10600;border-radius:10px;">
                     <a href="{{ contact_url }}"
                        style="display:inline-block;padding:14px 22px;
-                              font-size:14px;font-weight:bold;
-                              color:#ffffff;text-decoration:none;">
+                              font-family:Arial,Helvetica,sans-serif;
+                              color:#ffffff;text-decoration:none;
+                              font-weight:700;font-size:14px;">
                       Reserveer of stel een vraag
                     </a>
                   </td>
                 </tr>
               </table>
 
+              <p style="margin:24px 0 0 0;color:#bdbdbd;font-size:13px;line-height:1.6;">
+                Wij wensen je alvast veel rijplezier en hopen je snel te mogen verwelkomen.
+              </p>
+
+              <p style="margin:18px 0 0 0;font-size:13px;">
+                Met vriendelijke groet,<br>
+                <strong style="color:#ffffff;">Exclusive Cars</strong><br>
+                <a href="mailto:exclusivecarsautoverhuur@gmail.com"
+                   style="color:#e10600;text-decoration:none;">
+                  exclusivecarsautoverhuur@gmail.com
+                </a>
+              </p>
+
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="padding:20px;font-family:Arial,Helvetica,sans-serif;
-                       font-size:12px;color:#9a9a9a;background-color:#0f0f0f;">
-              Met vriendelijke groet,<br>
-              <strong style="color:#ffffff;">Exclusive Cars</strong><br>
-              <a href="mailto:exclusivecarsautoverhuur@gmail.com"
-                 style="color:#e10600;text-decoration:none;">
-                exclusivecarsautoverhuur@gmail.com
-              </a><br><br>
-
-              Je ontvangt deze mail omdat je je hebt aangemeld via de website.
+            <td style="padding:16px 24px;background:#0f0f0f;
+                       font-family:Arial,Helvetica,sans-serif;
+                       font-size:11px;color:#888;">
+              Je ontvangt deze e-mail omdat je je hebt aangemeld via onze website.<br>
               Afmelden kan door te reageren met “AFMELDEN”.
             </td>
           </tr>
