@@ -76,7 +76,7 @@ CARS = [
     },
     {
         "id": 3,
-        "name": "VW Golf 8.5 GTI Clubsport 2025",
+        "name": "Coming Soon...",
         "year": 2025,
         "price_per_day": 300,
         "deposit": 1500,
@@ -89,13 +89,11 @@ CARS = [
         "top_speed": 250,
         "images": [
             "img/cars/golf-85-gti-clubsport/01.jpg",
-            "img/cars/golf-85-gti-clubsport/02.jpg",
-            "img/cars/golf-85-gti-clubsport/03.jpg",
         ],
         "description": (
-            "Nieuw in ons assortiment: de VW Golf 8.5 GTI Clubsport 2025.\n\n"
-            "Deze verse Clubsport is precies wat je zoekt als je een sportieve hatchback wilt rijden met een scherp prijskaartje.\n\n"
-            "De Clubsport biedt een perfecte balans tussen dagelijks comfort en sportieve prestaties, met een 2.0 TSI motor die 300 pk levert en in slechts 5,6 seconden van 0 naar 100 km/u accelereert.\n\n"
+            "Nieuw in ons assortiment: deze prachtige hothatch uit 2025.\n\n"
+            "Deze verse ..... is precies wat je zoekt als je een sportieve hatchback wilt rijden met een scherp prijskaartje.\n\n"
+            "De ...... biedt een perfecte balans tussen dagelijks comfort en sportieve prestaties, met een 2.0 TSI motor die 300 pk levert en in slechts 5,6 seconden van 0 naar 100 km/u accelereert.\n\n"
             "Probeer hem vandaag nog en ervaar de perfecte combinatie van stijl, comfort en sportiviteit in één hatchback."
         ),
     },
