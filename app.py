@@ -80,7 +80,7 @@ CARS = [
         "year": 2025,
         "price_per_day": 300,
         "deposit": 1500,
-        "min_age": 21,
+        "min_age": 19,
         "km_included": "Km vrij",
         "location": "Rotterdam",
         "fuel": "Benzine",
@@ -88,9 +88,9 @@ CARS = [
         "zero_to_hundred": 5.6,
         "top_speed": 250,
         "images": [
-            "img/cars/golf-85-r-clubsport/01.jpg",
-            "img/cars/golf-85-r-clubsport/02.jpg",
-            "img/cars/golf-85-r-clubsport/03.jpg",
+            "img/cars/golf-85-gti-clubsport/01.jpg",
+            "img/cars/golf-85-gti-clubsport/02.jpg",
+            "img/cars/golf-85-gti-clubsport/03.jpg",
         ],
         "description": (
             "Nieuw in ons assortiment: de VW Golf 8.5 GTI Clubsport 2025.\n\n"
